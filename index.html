@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sefa Adam | Portföy</title>
+    <meta
+      name="description"
+      content="Sefa Adam'ın projeleri, yetkinlikleri ve iletişim bilgilerini içeren kişisel portföy sitesi."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sefa Adam | Portföy" />
+    <meta
+      property="og:description"
+      content="Projelerimi ve çalışmalarımı incelemek için portföy sitemi ziyaret edebilirsin."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(180deg, #f5f7ff 0%, #ffffff 45%);
+        color: #1c2333;
+      }
+
+      .container {
+        width: min(960px, 92%);
+        margin: 0 auto;
+      }
+
+      header {
+        padding: 72px 0 48px;
+      }
+
+      .hero {
+        display: grid;
+        gap: 20px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 12px 18px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      .btn-primary {
+        background: #2f5cff;
+        color: #fff;
+      }
+
+      .btn-secondary {
+        border: 1px solid #d4dcff;
+        color: #2f5cff;
+        background: #fff;
+      }
+
+      main {
+        padding-bottom: 56px;
+      }
+
+      section {
+        background: #fff;
+        border: 1px solid #edf0ff;
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 16px;
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 1.25rem;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+        display: grid;
+        gap: 8px;
+      }
+
+      footer {
+        border-top: 1px solid #edf0ff;
+        padding: 20px 0 36px;
+        color: #5a6580;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container hero">
+        <p>Merhaba 👋 Ben Sefa</p>
+        <h1>Yazılım projelerimi sergilediğim kişisel portföy sayfası</h1>
+        <p>
+          Frontend ve backend geliştirme odaklı çalışmalarımı burada toparladım.
+          Aşağıdan projelerime göz atabilir veya doğrudan iletişime geçebilirsin.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projeler">Projeleri Gör</a>
+          <a class="btn btn-secondary" href="mailto:ornek@mail.com">İletişime Geç</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="projeler">
+        <h2>Öne Çıkan Projeler</h2>
+        <ul>
+          <li>Proje 1 — Kısa proje açıklaması</li>
+          <li>Proje 2 — Kısa proje açıklaması</li>
+          <li>Proje 3 — Kısa proje açıklaması</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Yetenekler</h2>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>React, Node.js</li>
+          <li>REST API ve veritabanı entegrasyonu</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© <span id="year"></span> Sefa Adam · Portföy</div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

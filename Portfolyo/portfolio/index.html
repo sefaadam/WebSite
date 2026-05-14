@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolyom</title>
+    <meta name="description"
+        content="Ölçeklenebilir sistemler, Python, Flask ve C# odaklı junior backend/web geliştiricisinin kişisel portfolyosu.">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Dev<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#about" data-i18n="nav_about">Hakkımda</a></li>
+                <li><a href="#skills" data-i18n="nav_skills">Yetenekler</a></li>
+                <li><a href="#projects" data-i18n="nav_projects">Projeler</a></li>
+                <li><a href="#education-experience" data-i18n="nav_education">Eğitim & Deneyim</a></li>
+                <li><a href="#journey" data-i18n="nav_journey">Yolculuk</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">İletişim</a></li>
+                <li>
+                    <button id="lang-toggle" class="btn btn-outline"
+                        style="padding: 0.4rem 0.8rem; font-size: 0.8rem;">EN</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="bg-glow"></div>
+        <div class="bg-glow-2"></div>
+
+        <div class="container hero-content reveal">
+            <span class="hero-subtitle" data-i18n="hero_subtitle">Merhaba, Dünya.</span>
+            <h1 class="hero-title" data-i18n="hero_title">Güçlü Backend Sistemleri ve Web Uygulamaları Geliştiriyorum.
+            </h1>
+            <p class="hero-desc" data-i18n="hero_desc">Veritabanları, ölçeklenebilir mimariler ve karmaşık problemleri
+                zarif, üretime hazır çözümlere dönüştürme konusunda tutkulu, backend odaklı bir web geliştiricisiyim.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary" data-i18n="btn_projects">Projeleri İncele</a>
+                <a href="#contact" class="btn btn-outline" data-i18n="btn_contact">İletişime Geç</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title reveal" data-i18n="about_title">Hakkımda</h2>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p data-i18n="about_p1">Gerçek dünya yazılımları inşa etme konusunda uzmanlaşıyorum. Geliştirme
+                        serüvenim sadece sözdizimi (syntax) öğrenmekten ibaret değil; sistemlerin nasıl iletişim
+                        kurduğunu, verinin nasıl aktığını ve uygulamaların ölçeklenebilirlik ve sürdürülebilirlik için
+                        nasıl yapılandırıldığını anlamakla ilgilidir.</p>
+                    <p data-i18n="about_p2">Ana odak noktam backend geliştirme, veritabanı mimarisi ve API tasarımıdır.
+                        İnşa ederek öğrenmeye inanıyorum. Yalıtılmış öğreticileri takip etmek yerine, veritabanı
+                        şemasından kullanıcı arayüzüne kadar eksiksiz sistemler tasarlıyorum.</p>
+                    <p data-i18n="about_p3">Son derece disiplinli ve proje odaklıyım. Teknik bir zorlukla
+                        karşılaştığımda, bunu modern yazılım dünyasını ve geliştirme sanatını daha derinlemesine
+                        anlamak için bir fırsat olarak görüyorum. Amacım sürekli gelişmek ve iddialı teknik ekiplere
+                        değer katmaktır.
+                    </p>
+                </div>
+                <div class="about-visual reveal">
+                    <div class="profile-image-wrapper">
+                        <img src="images/Sefaa.png" alt="Profil Resmi">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title reveal" data-i18n="skills_title">Teknik Yetenekler</h2>
+            <div class="skills-grid reveal">
+                <div class="glass-panel skill-card">
+                    <i class="fa-brands fa-python skill-icon"></i>
+                    <div class="skill-name">Python</div>
+                </div>
+                <div class="glass-panel skill-card">
+                    <i class="fa-solid fa-flask skill-icon"></i>
+                    <div class="skill-name">Flask</div>
+                </div>
+                <div class="glass-panel skill-card">
+                    <i class="fa-solid fa-database skill-icon"></i>
+                    <div class="skill-name">SQL Server / SSMS</div>
+                </div>
+                <div class="glass-panel skill-card">
+                    <i class="fa-brands fa-html5 skill-icon"></i>
+                    <div class="skill-name">HTML &amp; CSS</div>
+                </div>
+                <div class="glass-panel skill-card">
+                    <i class="fa-brands fa-js skill-icon"></i>
+                    <div class="skill-name">JavaScript</div>
+                </div>
+                <div class="glass-panel skill-card">
+                    <i class="fa-brands fa-windows skill-icon"></i>
+                    <div class="skill-name">C#</div>
+                </div>
+                <div class="glass-panel skill-card">
+                    <i class="fa-brands fa-git-alt skill-icon"></i>
+                    <div class="skill-name">Git / GitHub</div>
+                </div>
+                <div class="glass-panel skill-card">
+                    <i class="fa-solid fa-server skill-icon"></i>
+                    <div class="skill-name" data-i18n="skill_backend">Backend Geliştirme</div>
+                </div>
+                <div class="glass-panel skill-card">
+                    <i class="fa-solid fa-diagram-project skill-icon"></i>
+                    <div class="skill-name" data-i18n="skill_db">Veritabanı Tasarımı</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title reveal" data-i18n="projects_title">Seçilmiş Projeler</h2>
+            <div class="projects-grid">
+
+                <!-- Project 1 -->
+                <div class="project-card reveal">
+                    <div class="project-visuals">
+                        <img src="images/UzakdagAricilik_AnaSayfa.png" alt="Uzakdağ Arıcılık Ana Sayfa"
+                            class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3>Uzakdağ Arıcılık Website</h3>
+                        <p data-i18n="p1_desc">Flask backend mimarisi kullanılarak bir bal markası için geliştirilmiş
+                            ürün odaklı web platformu. Ürün sayfaları, veritabanı yapısı, yorum sistemi planlaması ve
+                            ölçeklenebilir e-ticaret odaklı altyapı içerir.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Flask</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">SQL Server</span>
+                            <span class="tech-badge">HTML/CSS</span>
+                            <span class="tech-badge">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/sefaadam" target="_blank" class="btn btn-outline"
+                                data-i18n="btn_source"><i class="fa-brands fa-github"></i> Kaynak Kod</a>
+                            <a href="#" id="uzakdag-demo" class="btn btn-primary" data-i18n="btn_demo">Canlı Demo</a>
+                            <a href="#" class="btn btn-outline open-modal" data-modal="modal-p1"
+                                data-i18n="btn_details">Detayları Gör</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 3 -->
+                <div class="project-card reveal">
+                    <div class="project-visuals">
+                        <img src="images/AdminDashboard.PNG" alt="Admin Dashboard" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="p3_title">Yönetici Paneli Sistemi</h3>
+                        <p data-i18n="p3_desc">İçerik yönetimi, ürün yönetimi ve moderasyon sistemleri için tasarlanmış
+                            ölçeklenebilir bir yönetici (admin) paneli yapısı.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Flask</span>
+                            <span class="tech-badge">SQL Server</span>
+                            <span class="tech-badge">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/sefaadam" target="_blank" class="btn btn-outline"
+                                data-i18n="btn_source"><i class="fa-brands fa-github"></i> Kaynak Kod</a>
+                            <a href="#" class="btn btn-outline open-modal" data-modal="modal-p3"
+                                data-i18n="btn_details">Detayları Gör</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reveal">
+                    <div class="project-visuals">
+                        <img src="images/GelirGider.PNG" alt="Gelir Gider Takip" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="p4_title">Kişisel Gelir Gider Takip Sistemi</h3>
+                        <p data-i18n="p4_desc">Gelir ve giderleri kategori bazlı olarak takip eden, aylık finansal
+                            istatistikler sunan ve SQLite ile kalıcı veri depolama sağlayan Python tabanlı masaüstü
+                            uygulaması. CustomTkinter ile modern arayüz, taksit yönetimi ve otomatik vade hesaplama
+                            özellikleri içerir.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">CustomTkinter</span>
+                            <span class="tech-badge">SQLite</span>
+                            <span class="tech-badge" data-i18n="tech_desktop">Masaüstü Uygulama</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/sefaadam" target="_blank" class="btn btn-outline"
+                                data-i18n="btn_source"><i class="fa-brands fa-github"></i> Kaynak Kod</a>
+                            <a href="#" class="btn btn-outline open-modal" data-modal="modal-p4"
+                                data-i18n="btn_details">Detayları Gör</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card reveal">
+                    <div class="project-visuals">
+                        <img src="images/MuzikProgrami.PNG" alt="Müzik Çalar" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="p5_title">Müzik Çalar Web Sitesi</h3>
+                        <p data-i18n="p5_desc">Yayın ve oynatma işlevselliği için ücretsiz medya API'leri kullanılarak
+                            geliştirilmiş web tabanlı bir müzik çalar uygulaması. Dinamik içerik yükleme, özel medya
+                            kontrolleri ve sorunsuz API entegrasyonu sunar.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">APIs</span>
+                            <span class="tech-badge">HTML/CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/sefaadam" target="_blank" class="btn btn-outline"
+                                data-i18n="btn_source"><i class="fa-brands fa-github"></i> Kaynak Kod</a>
+                            <a href="#" class="btn btn-outline open-modal" data-modal="modal-p5"
+                                data-i18n="btn_details">Detayları Gör</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Education & Experience Section -->
+    <section id="education-experience">
+        <div class="container">
+            <h2 class="section-title reveal">Eğitim ve Deneyim Yolculuğu</h2>
+            <div class="timeline">
+
+                <!-- High School -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">EĞİTİM</div>
+                    <div class="glass-panel timeline-content">
+                        <h4>Konya Hekimoğlu Mesleki ve Teknik Anadolu Lisesi</h4>
+                        <div class="tech-badge" style="display: inline-block; margin-bottom: 1rem;">Bilişim
+                            Teknolojileri Alanı</div>
+                        <p>Bilişim teknolojileri, yazılım temelleri, bilgisayar sistemleri ve teknik altyapı üzerine
+                            odaklanan mesleki lise eğitimimi tamamladım.</p>
+
+                    </div>
+                </div>
+
+                <!-- Internship 1 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">STAJ DENEYİMİ</div>
+                    <div class="glass-panel timeline-content">
+                        <h4>Beyhekim Devlet Hastanesi</h4>
+                        <div class="tech-badge" style="display: inline-block; margin-bottom: 1rem;">Bilgi İşlem Stajyeri
+                        </div>
+                        <p>Hastane bilgi işlem departmanında stajımı tamamlayarak; teknik destek süreçleri, sistem
+                            operasyonları ve kurumsal teknoloji altyapısı konularında pratik tecrübe edindim. Erken
+                            dönem gerçek dünya teknik ortam deneyimi kazandırdı.</p>
+
+                    </div>
+                </div>
+
+                <!-- University -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">ÜNİVERSİTE</div>
+                    <div class="glass-panel timeline-content">
+                        <h4>Karamanoğlu Mehmetbey Üniversitesi</h4>
+                        <div class="tech-badge"
+                            style="display: inline-block; margin-bottom: 1rem; background: rgba(16, 185, 129, 0.1); color: #10b981; border-color: rgba(16, 185, 129, 0.2);">
+                            Mevcut Öğrenci</div>
+                        <p>Üniversite eğitimime devam ederken eş zamanlı olarak projeler ve stajlarla pratik backend
+                            geliştirme ve modern yazılım çözümleri üretme becerilerimi geliştirmekteyim.</p>
+
+                    </div>
+                </div>
+
+                <!-- Internship 2 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">STAJ DENEYİMİ</div>
+                    <div class="glass-panel timeline-content">
+                        <h4>Konya Park Yapı</h4>
+                        <div class="tech-badge" style="display: inline-block; margin-bottom: 1rem;">Web Sitesi Yönetimi
+                            Stajyeri</div>
+                        <p>Web sitesi yönetimi, içerik yapısı organizasyonu ve web platformu bakım süreçlerine odaklanan
+                            stajımı tamamladım. Gerçek web sitesi operasyonlarına ve dijital yönetim sistemlerine pratik
+                            bir giriş sağladı.</p>
+
+                    </div>
+                </div>
+
+                <!-- Current Experience -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">MEVCUT DENEYİM</div>
+                    <div class="glass-panel timeline-content">
+                        <h4>Neo Yazılım</h4>
+                        <div class="tech-badge"
+                            style="display: inline-block; margin-bottom: 1rem; background: rgba(16, 185, 129, 0.1); color: #10b981; border-color: rgba(16, 185, 129, 0.2);">
+                            Yazılım Geliştirme Stajyeri / Mesleki Eğitim Programı</div>
+                        <p>Profesyonel bir yazılım ortamında pratik yazılım geliştirme eğitimime ve staj süreçlerime
+                            aktif olarak devam ediyorum. Backend geliştirme, proje mimarisi ve teknik problem çözme
+                            becerilerimi sürekli olarak geliştiriyorum.</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Developer Journey Section -->
+    <section id="journey">
+        <div class="container">
+            <h2 class="section-title reveal" data-i18n="journey_title">Geliştirici Yolculuğu</h2>
+            <div class="timeline">
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date" data-i18n="journey_date_present">Günümüz</div>
+                    <div class="glass-panel timeline-content">
+                        <h4 data-i18n="journey_h1">Ölçeklenebilir Sistemler ve Mimariye Odaklanma</h4>
+                        <p data-i18n="journey_p1">Yazılım mimarisi kalıpları, gelişmiş veritabanı modelleme konularında
+                            bilgimi derinleştiriyor ve projeleri canlı ortamlara (production) hazırlıyorum. Kod
+                            kalitesini ve sistem performansını sürekli olarak iyileştiriyorum.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date" data-i18n="journey_date_recent">Yakın Geçmiş</div>
+                    <div class="glass-panel timeline-content">
+                        <h4 data-i18n="journey_h2">Full-Stack Projeler Geliştirme</h4>
+                        <p data-i18n="journey_p2">Yalıtılmış scriptlerden tam kapsamlı sistemlere geçiş yaptım. Uzakdağ
+                            Arıcılık web sitesi ve özel yönetici panelleri gibi platformlar geliştirerek, backend
+                            mantığını modern ve duyarlı (responsive) frontendlerle entegre ettim.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date" data-i18n="journey_date_past">Geçmiş</div>
+                    <div class="glass-panel timeline-content">
+                        <h4 data-i18n="journey_h3">Backend & Veritabanı Modelleme Öğrenimi</h4>
+                        <p data-i18n="journey_p3">Python, Flask ve ilişkisel veritabanlarında (SQL Server) uzmanlaşmak
+                            için önemli ölçüde zaman harcadım. Veri yapılarının, API entegrasyonlarının ve backend
+                            güvenlik temellerinin arkasındaki "neden" sorusunu anlamaya odaklandım.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title reveal" data-i18n="contact_title">İletişime Geçin</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info reveal">
+                    <p data-i18n="contact_desc">Yeni projeleri, yaratıcı fikirleri veya vizyonunuzun bir parçası olma
+                        fırsatlarını tartışmaya her zaman açığım. Birlikte ölçeklenebilir şeyler inşa edelim.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/sefaadam" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/sefa-adam/" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="javascript:void(0)" class="social-icon email-expand-btn" id="email-toggle">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span class="email-text">sefaadam57@gmail.com</span>
+                        </a>
+                        <a href="https://www.instagram.com/sefa.adam/" target="_blank" class="social-icon"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-container reveal">
+                    <form id="contact-form" class="contact-form glass-panel">
+                        <div class="form-group">
+                            <input type="text" name="from_name" placeholder="İsim" required
+                                data-i18n-placeholder="contact_ph_name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="user_email" placeholder="E-posta" required
+                                data-i18n-placeholder="contact_ph_email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Konu" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="5" placeholder="Mesaj" required
+                                data-i18n-placeholder="contact_ph_msg"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact_btn">Mesaj
+                            Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_text">&copy; 2026 Developer Portfolio. Özenle inşa edildi.</p>
+        </div>
+    </footer>
+
+    <!-- Modals for Project Details -->
+    <div class="modal-overlay" id="modal-p1">
+        <div class="modal-content glass-panel">
+            <button class="modal-close">&times;</button>
+            <h3>Uzakdağ Arıcılık Website - Detaylar</h3>
+            <p data-i18n="modal_p1_desc">Burada projenin teknik derinliğini sergileyebilirsiniz.</p>
+            <div class="modal-body" style="margin-top: 2rem;">
+                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">ER Diyagramı</h4>
+                <div class="placeholder-box placeholder-wide has-image" style="margin-bottom: 2rem;">
+                    <img src="images/ErDiyagrami.png" alt="ER Diyagramı">
+                </div>
+
+                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Yönetici Paneli</h4>
+                <div class="placeholder-box placeholder-wide has-image" style="margin-bottom: 2rem;">
+                    <img src="images/AdminDashboard.PNG" alt="Admin Paneli">
+                </div>
+
+                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Ürün Detay Sayfası</h4>
+                <div class="placeholder-box placeholder-wide has-image" style="margin-bottom: 1rem;">
+                    <img src="images/UrunDetay.png" alt="Ürün Sayfası">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-p3">
+        <div class="modal-content glass-panel">
+            <button class="modal-close">&times;</button>
+            <h3 data-i18n="modal_p3_title">Yönetici Paneli - Detaylar</h3>
+            <div class="modal-body" style="margin-top: 2rem;">
+                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Analitik Paneli</h4>
+                <div class="placeholder-box placeholder-wide has-image" style="margin-bottom: 2rem;">
+                    <img src="images/AdminDashboard.PNG" alt="Analitik Paneli">
+                </div>
+
+                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Tablo Yönetimi</h4>
+                <div class="placeholder-box placeholder-wide has-image" style="margin-bottom: 1rem;">
+                    <img src="images/TabloYonetimi.PNG" alt="Tablo Yönetimi">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-p4">
+        <div class="modal-content glass-panel">
+            <button class="modal-close">&times;</button>
+            <h3 data-i18n="modal_p4_title">Kişisel Gelir Gider Takip - Detaylar</h3>
+            <div class="modal-body" style="margin-top: 2rem;">
+                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Genel Bakış</h4>
+                <div class="placeholder-box placeholder-wide has-image" style="margin-bottom: 2rem;">
+                    <img src="images/GelirGider.PNG" alt="Genel Bakış">
+                </div>
+
+                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Finansal Grafikler</h4>
+                <div class="placeholder-box placeholder-wide has-image" style="margin-bottom: 2rem;">
+                    <img src="images/GelirGiderGrafik.PNG" alt="Finansal Grafikler">
+                </div>
+
+                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Taksit ve Ödeme Yönetimi</h4>
+                <div class="placeholder-box placeholder-wide has-image" style="margin-bottom: 1rem;">
+                    <img src="images/AylikOdeme.PNG" alt="Taksit Yönetimi">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-p5">
+        <div class="modal-content glass-panel">
+            <button class="modal-close">&times;</button>
+            <h3 data-i18n="modal_p5_title">Müzik Çalar Web Sitesi - Detaylar</h3>
+            <div class="modal-body" style="margin-top: 2rem;">
+                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Oynatma Listesi ve Arayüz</h4>
+                <div class="placeholder-box placeholder-wide has-image" style="margin-bottom: 2rem;">
+                    <img src="images/MuzikProgrami.PNG" alt="Oynatma Listesi">
+                </div>
+
+                <h4 style="margin-bottom: 0.5rem; color: var(--accent);">Dinleme Geçmişi</h4>
+                <div class="placeholder-box placeholder-wide has-image" style="margin-bottom: 1rem;">
+                    <img src="images/Gecmis.PNG" alt="Dinleme Geçmişi">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox for Image Fullscreen -->
+    <div id="lightbox" class="lightbox-overlay">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

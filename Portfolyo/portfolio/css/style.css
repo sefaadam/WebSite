@@ -1,0 +1,944 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+    /* Colors */
+    --bg-main: #0a0a0c;
+    --bg-secondary: #121216;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a0b0;
+    --accent: #6366f1; /* Subtle indigo neon */
+    --accent-glow: rgba(99, 102, 241, 0.4);
+    --border-color: rgba(255, 255, 255, 0.08);
+    
+    /* Glassmorphism */
+    --glass-bg: rgba(25, 25, 30, 0.85); /* Artırılmış opaklık (blur kaldırıldığı için) */
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --glass-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
+    
+    /* Spacing & Layout */
+    --section-padding: 100px 0;
+    --container-width: 1200px;
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-main);
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    line-height: 1.6;
+    width: 100%;
+    position: relative;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 4rem; letter-spacing: -1.5px; }
+h2 { font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 2rem; position: relative;}
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; font-weight: 600; }
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+/* Layout Classes */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: var(--section-padding);
+}
+
+/* Reusable UI Components */
+.glass-panel {
+    background: var(--glass-bg);
+    /* Performans için blur kaldırıldı, sadece yarı saydam arkaplan kullanılıyor */
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow);
+    padding: 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    will-change: transform;
+}
+
+.glass-panel:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.btn-primary:hover {
+    background: #4f46e5;
+    box-shadow: 0 0 25px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+    border-color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Placeholder Utility */
+.placeholder-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 10, 12, 0.7);
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+    color: var(--text-secondary);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder-box.has-image {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.placeholder-box.has-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+/* Project visual image adjustments */
+.project-visuals {
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.project-visuals img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.placeholder-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.placeholder-box i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    opacity: 0.5;
+}
+
+.placeholder-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.placeholder-tall { height: 400px; }
+.placeholder-wide { height: 300px; width: 100%; }
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 12, 0.95);
+    backdrop-filter: blur(6px); /* Sadece menüde hafif bir blur tutuldu */
+    -webkit-backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    will-change: background-color;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px; /* Offset for nav */
+    overflow: hidden; /* Glow'ların taşmasını engellemek için */
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    position: relative;
+}
+
+.hero-subtitle {
+    font-family: 'Fira Code', monospace;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.hero-title {
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Background Effects */
+.bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+    top: -200px;
+    right: -100px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.bg-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%);
+    bottom: 10%;
+    left: -100px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Section Headings */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.profile-image-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    display: flex;
+}
+
+.profile-image-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+.profile-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.profile-image-wrapper:hover img {
+    transform: scale(1.03);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+.skill-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    min-width: 0; /* İçeriğin taşmasını engellemek için */
+}
+
+.skill-icon {
+    font-size: 1.8rem;
+    color: var(--accent);
+    flex-shrink: 0; /* İkonun küçülmesini engellemek için */
+}
+
+.skill-name {
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Çok uzun isimler için üç nokta */
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.project-card:nth-child(even) {
+    grid-template-columns: 1fr 1.2fr;
+}
+
+.project-card:nth-child(even) .project-content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.project-card:nth-child(even) .project-visuals {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.project-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+}
+
+.tech-badge {
+    background: rgba(99, 102, 241, 0.1);
+    color: #818cf8;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.project-links .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+/* Timeline (Developer Journey) */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 4rem auto 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 11px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bg-main);
+    border: 3px solid var(--accent);
+    z-index: 2;
+}
+
+.timeline-date {
+    font-family: 'Fira Code', monospace;
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-visuals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Github Section */
+.github-stats-container {
+    margin-top: 3rem;
+}
+
+.github-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* Contact Section */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.social-icon:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.social-icon.email-expand-btn {
+    min-width: 45px; /* Ensures perfect circle initially */
+    width: auto;
+    max-width: 45px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 25px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.social-icon.email-expand-btn.expanded {
+    max-width: 300px;
+    padding: 0 20px;
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.email-text {
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    pointer-events: none;
+}
+
+.social-icon.email-expand-btn.expanded .email-text {
+    max-width: 250px;
+    opacity: 1;
+    margin-left: 10px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(0,0,0,0.4);
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background: var(--bg-secondary);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+.modal-body .placeholder-box {
+    margin-bottom: 1.5rem;
+}
+
+/* Animations Utility */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform; /* Tarayıcıya önceden haber vererek performansı artırır */
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Lightbox Styles */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    z-index: 3000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.lightbox-overlay.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 3001;
+    transition: transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.1);
+    color: var(--accent);
+}
+
+/* Image Hover Effect for Clickable Images */
+.project-image, .modal-image, .has-image img {
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.project-image:hover, .modal-image:hover, .has-image img:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+/* Responsive Design */
+
+
+/* Tablet & Smaller Desktop (Max 1024px) */
+@media (max-width: 1024px) {
+    :root {
+        --section-padding: 80px 0;
+    }
+    
+    .container {
+        padding: 0 1.5rem;
+    }
+
+    h1 { font-size: 3.5rem; }
+}
+
+/* Tablets (Max 992px) */
+@media (max-width: 992px) {
+    .about-grid {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .profile-image-wrapper {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .project-card, .project-card:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-card:nth-child(even) .project-content { grid-column: auto; grid-row: 2; }
+    .project-card:nth-child(even) .project-visuals { grid-column: auto; grid-row: 1; }
+
+    .hero-content {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .hero-desc {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+}
+
+/* Mobile (Max 768px) */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2rem; }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+
+    .hero-desc {
+        font-size: 1.1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 0.8rem;
+    }
+
+    .skill-card {
+        padding: 0.8rem;
+        gap: 0.6rem;
+    }
+
+    .skill-icon {
+        font-size: 1.4rem;
+    }
+
+    .skill-name {
+        font-size: 0.85rem;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-dot {
+        left: 1px;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
+
+    .lightbox-close {
+        top: 1rem;
+        right: 1.5rem;
+        font-size: 2.5rem;
+    }
+}
+
+/* Small Mobile (Max 480px) */
+@media (max-width: 480px) {
+    h1 { font-size: 2.2rem; }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links on very small screens or consider a hamburger menu */
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+    }
+
+    .project-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-links .btn {
+        width: 100%;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .social-icon.email-expand-btn.expanded {
+        max-width: 100%;
+    }
+
+    .section-title {
+        text-align: center;
+    }
+
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
